@@ -115,9 +115,12 @@ graph TD
 
 ## Assets
 
-- [Architecture Diagram](file:///c:/Users/Rupavani/Downloads/adk-workspace/elderly-care-assistant/assets/architecture_diagram.png)
-- [Cover Banner](file:///c:/Users/Rupavani/Downloads/adk-workspace/elderly-care-assistant/assets/cover_page_banner.png)
+### Architecture Diagram
+![Architecture Diagram](assets/architecture_diagram.png)
+
+### Cover Banner
+![Cover Banner](assets/cover_page_banner.png)
 
 ## Demo Script
 
-NAR-ration script is located at [DEMO_SCRIPT.txt](file:///c:/Users/Rupavani/Downloads/adk-workspace/elderly-care-assistant/DEMO_SCRIPT.txt).
+NAR-ration script is located at [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt).
