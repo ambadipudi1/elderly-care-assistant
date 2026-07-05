@@ -1,0 +1,33 @@
+[0:00 — HOOK]            
+Elderly patients and their families often struggle to coordinate complex daily routines, from managing medication schedules to tracking physical and emotional well-being. Caregivers need to stay in the loop for critical changes, while giving the patient an easy, conversational way to manage their health.
+
+[0:20 — WHAT IT IS]      
+This is the Elderly Care Assistant, built for the Agents for Health and Social Good track. It uses a multi-agent ADK workflow to safely handle medication logs, well-being checks, and doctor visits while enforcing strict safety rules.
+
+[0:40 — SHOW THE BANNER] 
+(show assets/cover_page_banner.png)
+Our project delivers automated, secure, and intelligent care coordination right out of the box, wrapping complex medical tools behind a simple chat interface.
+
+[1:00 — ARCHITECTURE]    
+(show assets/architecture_diagram.png)
+Let's look at the workflow. Every user request starts at the Security Checkpoint, which scrubs PII and checks for prompt injection or unsafe dosage requests. If it's safe, the Main Coordinator takes over and delegates to one of our specialized sub-agents: the Medication Manager or the Well-being Logger. These agents use our MCP Server to query real backend tools. If a critical change is requested, like a dosage update, the workflow pauses at the Human Caregiver Approval node before reaching the Final Output.
+
+[2:00 — LIVE DEMO]       
+(switch to playground at localhost:18081)
+Let's test it out. First, I'll ask a simple question: "What medications am I taking today?"
+(pause and send message)
+The Security Checkpoint marks it safe, the Medication Manager looks up the schedule, and we get our list back. 
+
+Now, let's try an unsafe request: "Please increase my Lisinopril dose to 50mg today."
+(pause and send message)
+Our Security Checkpoint instantly detects that 50mg exceeds the safe daily limit and blocks the request entirely before it even reaches the LLM. 
+
+Finally, let's add a new medication: "Add a new medication: Vitamin D3 1000 UI daily."
+(pause and send message)
+The coordinator realizes this is a care plan update. It pauses the entire workflow and asks for Caregiver Approval. I'll type "yes" to approve it, and the action completes successfully.
+
+[3:00 — SECURITY & MCP]  
+Our MCP server provides 6 dedicated tools covering everything from vitals to doctor schedules, while our security node guarantees that malicious prompts and dangerous medication limits are blocked immediately, complete with an audit log.
+
+[3:30 — IMPACT / CLOSE]  
+The Elderly Care Assistant provides peace of mind for families, keeps patients compliant and safe, and demonstrates the power of ADK multi-agent workflows in a high-stakes healthcare environment. Thank you!
