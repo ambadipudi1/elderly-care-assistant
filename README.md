@@ -1,5 +1,7 @@
 # Elderly Care Assistant
 
+![Cover Banner](assets/cover_page_banner.png)
+
 An intelligent, secure, multi-agent assistant designed to coordinate daily routines, track medication schedules, log physical and emotional well-being, and manage doctor appointments/visit logs for elderly patients.
 
 ## Prerequisites
